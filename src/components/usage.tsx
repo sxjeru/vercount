@@ -84,6 +84,13 @@ Site Total Visitors <span id="vercount_value_site_uv">Loading</span>`}
                 {/* React Implementation */}
                 <TabsContent value="react" className="mt-6">
                   <div className="flex flex-col gap-8">
+                    {/* Warning Notice */}
+                    <div className="flex flex-col space-y-2 rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4 backdrop-blur-xs">
+                      <p className="text-yellow-300 text-sm">
+                        ⚠️ 注意：自部署请使用 HTML 方法插入统计脚本，React 调包使用的仍是原始项目部署。
+                      </p>
+                    </div>
+                    
                     {/* Introduction */}
                     <div className="flex flex-col space-y-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xs">
                       <h3 className="text-xl font-bold">vercount-react</h3>

@@ -171,7 +171,22 @@
 
   // Main initialization function
   const initCounter = async () => {
-    hideCounters();
+    // hideCounters();  // 注释掉以避免容器先消失再出现的闪烁问题
+    
+    // 预填充空元素为 Loading
+    // const elements = getCachedElements();
+    // const COUNTER_IDS = ['site_pv', 'page_pv', 'site_uv'];
+    // COUNTER_IDS.forEach(id => {
+    //   const busuanziEl = elements[`busuanzi_value_${id}`];
+    //   const vercountEl = elements[`vercount_value_${id}`];
+      
+    //   if (busuanziEl && !busuanziEl.textContent?.trim()) {
+    //     busuanziEl.textContent = 'Loading';
+    //   }
+    //   if (vercountEl && !vercountEl.textContent?.trim()) {
+    //     vercountEl.textContent = 'Loading';
+    //   }
+    // });
     
     // Try to fetch new data
     const data = await fetchCounterData();

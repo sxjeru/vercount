@@ -29,6 +29,7 @@
 
 4. 为项目新建自定义域名，然后新建环境变量 `NEXT_PUBLIC_API_BASE_URL = https://xxx` 即可
 
+### 注意：自部署请使用 HTML 方法插入统计脚本，React 调包使用的仍是原始项目部署。
 ---
 
 以下为原作者 README 内容。
