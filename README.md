@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-4A628A?style=for-the-badge" alt="简体中文">
 </div>
 
-### 本分支相较于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改如下，本质是允许去除用户管理功能，**更加方便个人用户自部署使用**：
+#### 本分支相较于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改如下，本质是允许去除用户管理功能，**更加方便个人用户自部署使用**：
 
 ### 环境变量优化
 - ✅ 新增 `NEXT_PUBLIC_API_BASE_URL` 统一配置应用 URL（替代 `BETTER_AUTH_URL`）

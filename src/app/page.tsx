@@ -72,7 +72,7 @@ export default function Home() {
 									</p>
 									<p className="text-lg text-zinc-500 leading-normal">
 										网站流量计数器，简单、快速、可靠，由 Vercel 提供支持
-										<br /><br />
+										<br />
 										不蒜子计数器完美替代方案
 									</p>
 								</BlurFadeStagger>
