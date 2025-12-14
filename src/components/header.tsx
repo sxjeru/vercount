@@ -29,12 +29,6 @@ export default async function Header() {
 							>
 								Features
 							</Link>
-							<Link
-								href="/#sponsorship"
-								className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-							>
-								Sponsorship
-							</Link>
 						</nav>
 					</div>
 
@@ -46,7 +40,7 @@ export default async function Header() {
 							asChild
 						>
 							<Link
-								href="https://github.com/EvanNotFound/vercount"
+								href="https://github.com/sxjeru/vercount"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

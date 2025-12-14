@@ -17,7 +17,6 @@ import Header from "@/components/header";
 import Usage from "@/components/usage";
 import Features from "@/components/features";
 import OpenSource from "@/components/open-source";
-import Sponsorship from "@/components/sponsorship";
 import Footer from "@/components/footer";
 import BlurFadeStagger from "@/components/animations/blur-fade-stagger";
 import { cn } from "@/lib/utils";
@@ -72,7 +71,7 @@ export default function Home() {
 										Straightforward, Fast, and Reliable Website Counter.
 									</p>
 									<p className="text-lg text-zinc-500 leading-normal">
-										网站流量计数器，简单、快速、可靠
+										网站流量计数器，简单、快速、可靠，由 Vercel 提供支持
 										<br />
 										不蒜子计数器完美替代方案
 									</p>
@@ -88,7 +87,6 @@ export default function Home() {
 
 				<Usage />
 				<Features />
-				<Sponsorship />
 				<OpenSource />
 			</main>
 			<Footer />
