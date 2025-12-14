@@ -3,6 +3,26 @@
   <img src="https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-4A628A?style=for-the-badge" alt="简体中文">
 </div>
 
+## 🔀 Fork 修改说明
+
+本分支相对于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改：
+
+### 更加方便个人用户自部署使用
+
+### 环境变量优化
+- ✅ 新增 `NEXT_PUBLIC_API_BASE_URL` 统一配置应用 URL（替代 `BETTER_AUTH_URL`）
+- ✅ 用户管理相关变量（`DATABASE_URL`、`GITHUB_*`、`BETTER_AUTH_SECRET`）改为**可选**
+- ✅ 仅需配置 `KV_*` 和 `NEXT_PUBLIC_API_BASE_URL` 即可运行核心计数功能
+
+### 动态自部署 URL 支持
+- ✅ `client.js` 自动从 script src 推断 API URL，支持自定义域名部署
+- ✅ 首页计数器改用本地 Hook，不再依赖外部 `vercount-react` 包的硬编码 URL
+- ✅ `usage.tsx` 代码示例动态显示当前配置的 URL
+
+### 访问数过期时间由 3 个月改为 3 年
+
+---
+
 ![vercount banner@3x](https://github.com/user-attachments/assets/e41667c9-f5f3-426f-b9f0-ece87d404840)
 
 # Vercount 网站计数器
