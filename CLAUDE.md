@@ -66,17 +66,22 @@ pnpx drizzle-kit studio       # Open Drizzle Studio
 
 ## Configuration Files
 
-### Environment Variables Required
+### Environment Variables
+
+#### 核心功能必需（访问计数）
 ```bash
-# Application Base URL (用于 API 端点和认证回调)
+# 应用基础 URL
 NEXT_PUBLIC_API_BASE_URL="https://events.vercount.one"
 
-# Database
-DATABASE_URL="postgresql://..."
-
-# Redis/KV (Upstash)
+# Redis/KV (Upstash) - 存储访问计数
 KV_REST_API_URL="https://..."
 KV_REST_API_TOKEN="..."
+```
+
+#### 用户管理可选（不需要用户系统可不填）
+```bash
+# Database - 存储用户和域名数据
+DATABASE_URL="postgresql://..."
 
 # OAuth
 GITHUB_CLIENT_ID="..."
