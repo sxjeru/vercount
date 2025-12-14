@@ -7,7 +7,7 @@ import {
 } from "@/utils/busuanzi";
 
 // Constants
-export const EXPIRATION_TIME = 60 * 60 * 24 * 30 * 3; // 3 months in seconds
+export const EXPIRATION_TIME = 60 * 60 * 24 * 30 * 12 * 3; // 3 years in seconds
 
 // Types
 export interface SanitizedUrl {

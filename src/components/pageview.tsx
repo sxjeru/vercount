@@ -1,5 +1,5 @@
 "use client";
-import { useVercount } from "vercount-react";
+import { useVercount } from "@/hooks/use-vercount";
 import BlurFadeStagger from "./animations/blur-fade-stagger";
 
 export default function PageView() {
