@@ -8,7 +8,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { getDb } from "@/db";
 
 // 检查是否配置了用户管理所需的环境变量
-const isAuthConfigured = () => {
+export const isAuthConfigured = () => {
   return !!(env.DATABASE_URL && env.GITHUB_CLIENT_ID && env.GITHUB_CLIENT_SECRET && env.BETTER_AUTH_SECRET);
 };
 
@@ -77,6 +77,11 @@ export const auth = new Proxy({} as ReturnType<typeof betterAuth>, {
 export type Session = typeof auth.$Infer.Session;
 
 export const getServerSession = async () => {
+  // 如果 auth 未配置，返回 null 而不是抛错
+  if (!isAuthConfigured()) {
+    return null;
+  }
+  
   const session = await getAuth().api.getSession({
     headers: await headers(),
   });

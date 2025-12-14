@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getServerSession } from "@/lib/auth";
+import { getServerSession, isAuthConfigured } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
@@ -14,6 +14,11 @@ export default async function DashboardLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	// 如果 auth 未配置，重定向到登录页（会显示未配置提示）
+	if (!isAuthConfigured()) {
+		redirect("/auth/signin");
+	}
+
 	const session = await getServerSession();
 
 	if (!session) {

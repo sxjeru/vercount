@@ -5,9 +5,7 @@
 
 ## 🔀 Fork 修改说明
 
-本分支相对于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改：
-
-### 更加方便个人用户自部署使用
+#### 本分支相较于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改如下，本质是**更加方便个人用户自部署使用**：
 
 ### 环境变量优化
 - ✅ 新增 `NEXT_PUBLIC_API_BASE_URL` 统一配置应用 URL（替代 `BETTER_AUTH_URL`）
@@ -19,9 +17,20 @@
 - ✅ 首页计数器改用本地 Hook，不再依赖外部 `vercount-react` 包的硬编码 URL
 - ✅ `usage.tsx` 代码示例动态显示当前配置的 URL
 
-### 访问数过期时间由 3 个月改为 3 年
+#### 访问数过期时间由 3 个月改为 3 年
+
+## Vercel 部署方法
+
+1. fork 本项目到自己的 GitHub 账号下
+
+2. 在 Vercel 上创建一个项目，并导入刚才 fork 的 GitHub 仓库，直接点击部署（不用管部署失败问题）
+
+3. 点进项目，Storage，新建一个 Upstash for Redis，注意前缀需填 `KV_REST_API`
+
+4. 为项目新建自定义域名，然后新建环境变量 `NEXT_PUBLIC_API_BASE_URL = https://xxx` 即可
 
 ---
+
 
 ![vercount banner@3x](https://github.com/user-attachments/assets/e41667c9-f5f3-426f-b9f0-ece87d404840)
 

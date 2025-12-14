@@ -2,10 +2,31 @@ import { Separator } from "@/components/ui/separator";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import SignInForm from "./signin-form";
-import { getServerSession } from "@/lib/auth";
+import { getServerSession, isAuthConfigured } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function SignIn() {
+	// 如果 auth 未配置，显示提示
+	if (!isAuthConfigured()) {
+		return (
+			<>
+				<Header />
+				<main className="flex min-h-screen flex-col items-center justify-center bg-black text-white">
+					<div className="text-center p-8">
+						<h1 className="text-2xl font-bold mb-4">用户系统未启用</h1>
+						<p className="text-zinc-400">
+							管理员未配置用户管理功能所需的环境变量。
+						</p>
+						<p className="text-zinc-500 mt-2 text-sm">
+							需要配置: DATABASE_URL, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, BETTER_AUTH_SECRET
+						</p>
+					</div>
+				</main>
+				<Footer />
+			</>
+		);
+	}
+
 	const session = await getServerSession();
 
 	if (session) {
