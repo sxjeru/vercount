@@ -1,6 +1,22 @@
 (function () {
   'use strict';
   
+  // 动态获取 API URL（从 script src 推断）
+  const getApiUrl = () => {
+    const script = document.currentScript;
+    if (script && script.src) {
+      try {
+        const url = new URL(script.src);
+        return `${url.origin}/api/v2/log`;
+      } catch (e) {
+        // URL 解析失败，使用回退值
+      }
+    }
+    // 回退到硬编码值（兼容性保障）
+    return 'https://events.vercount.one/api/v2/log';
+  };
+
+  const API_URL = getApiUrl();
   const readyCallbacks = [];
   let isDocumentReady = false;
   let cachedElements = null;
@@ -17,7 +33,6 @@
     }
   };
 
-  const API_URL = 'https://events.vercount.one/api/v2/log';
   const CACHE_KEY = 'visitorCountData';
   const REQUEST_TIMEOUT = 5000; // 5 seconds
 

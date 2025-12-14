@@ -6,7 +6,6 @@ export const env = createEnv({
     GITHUB_CLIENT_ID: z.string().min(1),
     GITHUB_CLIENT_SECRET: z.string().min(1),
 
-    BETTER_AUTH_URL: z.url(),
     BETTER_AUTH_SECRET: z.string().min(1),
 
     DATABASE_URL: z.url(),
@@ -15,9 +14,11 @@ export const env = createEnv({
     KV_REST_API_TOKEN: z.string(),
   },
   client: {
+    NEXT_PUBLIC_API_BASE_URL: z.url(),
   },
 
   // only for client env variables
   experimental__runtimeEnv: {
+    NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
   }
 });

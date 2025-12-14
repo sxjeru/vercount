@@ -11,6 +11,7 @@ export type Session = typeof auth.$Infer.Session;
 
 
 const options = {
+  baseURL: env.NEXT_PUBLIC_API_BASE_URL,
   database: drizzleAdapter(db, {
     provider: "pg",
     usePlural: true,

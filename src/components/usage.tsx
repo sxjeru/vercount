@@ -1,8 +1,11 @@
 import { CodeBlockWithHighlight } from './ui/code-block-server';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { SiHtml5, SiReact } from '@icons-pack/react-simple-icons';
+import { env } from '@/env';
 
 export default function Usage() {
+	const apiBaseUrl = env.NEXT_PUBLIC_API_BASE_URL;
+	
 	return (
         <section id="usage" className="w-full py-20 md:py-32 border-b border-white/10">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,7 +43,7 @@ export default function Usage() {
                       </div>
                       <p className="text-zinc-400">添加以下 HTML 代码</p>
                       <CodeBlockWithHighlight 
-                        code={`<script defer src="https://events.vercount.one/js"></script>`}
+                        code={`<script defer src="${apiBaseUrl}/js"></script>`}
                         language="html"
                       />
                     </div>
