@@ -4,7 +4,7 @@
 </div>
 
 ### 本分支相较于上游 [EvanNotFound/vercount](https://github.com/EvanNotFound/vercount) 的主要修改如下：
-本质是允许忽略用户管理功能，**更加方便个人用户自部署使用**。
+本质是允许忽略用户管理功能，仅保留核心计数功能，**更加方便个人用户自部署使用**。
 
 ### 环境变量优化
 - ✅ 新增 `NEXT_PUBLIC_API_BASE_URL` 统一配置应用 URL（替代 `BETTER_AUTH_URL`）
@@ -25,9 +25,9 @@
 
 2. 在 Vercel 上创建一个项目，并导入刚才 fork 的 GitHub 仓库，直接点击部署（不用管部署失败问题）
 
-3. 点进项目，Storage，新建一个 Upstash for Redis，注意前缀需填 `KV_REST_API`
+3. 点进项目，Storage，新建一个 Upstash for Redis，注意变量前缀需填 `KV_REST_API`
 
-4. 为项目新建自定义域名，然后新建环境变量 `NEXT_PUBLIC_API_BASE_URL = https://xxx` 即可
+4. 在项目设置中添加自定义域名，然后新建环境变量 `NEXT_PUBLIC_API_BASE_URL = https://xxx` 即可
 
 ### 注意：自部署请使用 HTML 方法插入统计脚本，React 调包使用的仍是原始项目部署。
 ---
