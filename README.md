@@ -29,6 +29,8 @@
 
 4. 在项目设置中添加自定义域名，然后新建环境变量 `NEXT_PUBLIC_API_BASE_URL = https://xxx` 即可
 
+- 若无自定义域名，也需要新建环境变量 `NEXT_PUBLIC_API_BASE_URL` ，可使用 Vercel 分配的 `https://xxx.vercel.app` 作为值
+
 ### 注意：自部署请使用 HTML 方法插入统计脚本，React 调包使用的仍是原始项目部署。
 ---
 
